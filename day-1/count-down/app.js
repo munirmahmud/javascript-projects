@@ -16,10 +16,14 @@ const countDown = () => {
   const minutes = Math.floor(totalSeconds / 60) % 60;
   const seconds = Math.floor(totalSeconds) % 60;
 
-  daysEl.innerHTML = days;
-  hoursEl.innerHTML = hours;
-  minutesEl.innerHTML = minutes;
-  secondsEl.innerHTML = seconds;
+  daysEl.innerHTML = timeFormat(days);
+  hoursEl.innerHTML = timeFormat(hours);
+  minutesEl.innerHTML = timeFormat(minutes);
+  secondsEl.innerHTML = timeFormat(seconds);
+};
+
+const timeFormat = (time) => {
+  return time < 10 ? `0${time}` : time;
 };
 
 countDown();
